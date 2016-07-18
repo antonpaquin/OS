@@ -1,0 +1,4 @@
+IP=dhcp
+ESSID='PS50-a'
+Key='AntonWasHere'
+Priority=1
