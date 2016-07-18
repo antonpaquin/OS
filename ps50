@@ -1,4 +1,5 @@
 IP=dhcp
+Interface=wlp2s0
 ESSID='PS50-a'
 Key='AntonWasHere'
 Priority=1
