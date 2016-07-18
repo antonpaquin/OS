@@ -26,5 +26,4 @@ mount /dev/sda1 /mnt/boot/efi &&
 
 genfstab -p /mnt >> /mnt/etc/fstab &&
 
-echo "Chrooting, load up the next script in the new env" &&
-arch-chroot /mnt
+echo "arch-chroot and load up the next script in the new env" &&
