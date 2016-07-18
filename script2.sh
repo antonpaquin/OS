@@ -10,7 +10,5 @@ curl "https://raw.githubusercontent.com/antonpaquin/OS/master/ps50" > /etc/netct
 
 mkinitcpio -p linux &&
 
-passwd &&
-
 pacman -S --noconfirm refind-efi &&
 echo "Exit chroot and reboot, the system should be installed!"
