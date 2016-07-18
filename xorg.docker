@@ -15,7 +15,10 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
   xserver-xorg-core \
   xserver-xorg-input-all \
   xserver-xorg-video-fbdev \
-  xserver-xorg-video-intel
+  xserver-xorg-video-intel \
+  xinit \
+  xterm
+
 
 RUN rm -rf /var/lib/apt/lists/*
 
