@@ -6,7 +6,7 @@ No change to my operating system shall go undocumented. I shall be able to recov
 # Usage
 Boot the arch iso -- built on a download dated 2016-07-01
 
-`curl https://raw.githubusercontent.com/antonpaquin/OS/script1.sh | sh`
+`curl https://raw.githubusercontent.com/antonpaquin/OS/master/script1.sh | sh`
 
-`curl https://raw.githubusercontent.com/antonpaquin/OS/script2.sh | sh`
+`curl https://raw.githubusercontent.com/antonpaquin/OS/master/script2.sh | sh`
 
