@@ -2,7 +2,7 @@ parted -s /dev/sda mklabel gpt &&
 parted -s /dev/sda mkpart ESP fat32 1MB 1GB &&
 parted -s /dev/sda set 1 boot on &&
 parted -s /dev/sda name 1 boot &&
-parted -s /dev/sda mkpart 1GB 33GB &&
+parted -s /dev/sda mkpart swap 1GB 33GB &&
 parted -s /dev/sda name 2 swap &&
 parted -s /dev/sda mkpart primary ext4 33GB 100% &&
 parted -s /dev/sda name 3 main &&
