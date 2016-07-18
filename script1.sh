@@ -21,6 +21,9 @@ mv /etc/pacman.d/mirrorlist.tmp /etc/pacman.d/mirrorlist &&
 
 pacstrap /mnt base &&
 
+mkdir /mnt/boot/efi &&
+mount /dev/sda1 /mnt/boot/efi &&
+
 genfstab -p /mnt >> /mnt/etc/fstab &&
 
 echo "Chrooting, load up the next script in the new env" &&
