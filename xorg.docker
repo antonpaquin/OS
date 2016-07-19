@@ -13,6 +13,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY $DISPLAY
 RUN apt-get update -y && apt-get install -y --no-install-recommends xorg
 
+RUN perl -pi -e 's/=console/=anybody/' /etc/X11/Xwrapper.config
+
 RUN rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]
