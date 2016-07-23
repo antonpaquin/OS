@@ -6,8 +6,6 @@ locale-gen &&
 
 echo "Nimitz" > /etc/hostname &&
 
-curl "https://raw.githubusercontent.com/antonpaquin/OS/master/ps50" > /etc/netctl/ps50 &&
-
 mkinitcpio -p linux &&
 
 pacman -S --noconfirm refind-efi &&
