@@ -10,6 +10,10 @@ systemctl enable docker &&
 systemctl start docker &&
 
 mkdir /usr/dockerfiles &&
+mkdir /usr/dockerscripts &&
+PATH=$PATH:/usr/dockerscripts &&
+chmod o+x /root &&
+ln -s /root/OS /home/anton/OS &&
 #Fuck it I'm running x on the host _for now_
 #mkdir /usr/dockerfiles/xorg &&
 #curl https://raw.githubusercontent.com/antonpaquin/OS/master/xorg.docker > /usr/dockerfiles/xorg/Dockerfile &&
@@ -24,3 +28,7 @@ echo "greeter-session=lightdm-gtk-greeter" >> /etc/lightdm/lightdm.conf &&
 pacman -S --noconfirm fluxbox &&
 
 pacman -S --noconfirm git
+
+git clone https://github.com/antonpaquin/OS /root &&
+cp /root/OS/ConfigFiles/ps50 /etc/netctl/ps50 &&
+cp /root/OS/ConfigFiles/bashrc /home/anton/.bashrc
