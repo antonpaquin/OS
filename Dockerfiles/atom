@@ -1,0 +1,25 @@
+FROM debian:jessie
+MAINTAINER Anton Paquin <antonpaquin@gmail.com>
+
+RUN useradd -m user
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git \
+    gconf2 \
+    gconf-service \
+    gvfs-bin \
+    libgtk2.0.0 \
+    libnotify4 \
+    libxtst6 \
+    libnss3 \
+    libasound2 \
+    xdg-utils \ 
+    curl \
+    ca-certificates
+
+RUN curl -L https://atom.io/download/deb > /home/user/atom-amd64.deb && \
+    dpkg -i /home/user/atom-amd64.deb && \
+    rm -rf /home/user/atom-amd64.deb 
+
+ENTRYPOINT [ "atom", "--foreground" ]
