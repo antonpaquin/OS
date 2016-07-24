@@ -27,11 +27,14 @@ echo "greeter-session=lightdm-gtk-greeter" >> /etc/lightdm/lightdm.conf &&
 
 pacman -S --noconfirm fluxbox &&
 
-pacman -S --noconfirm git
-
+pacman -S --noconfirm git &&
 git config --global user.email "antonpaquin@gmail.com" &&
 git config --global user.name "Anton Paquin" &&
-
 git clone https://github.com/antonpaquin/OS /root &&
+
+pacman -S --noconfirm alsa-utils &&
+
 cp /root/OS/ConfigFiles/ps50 /etc/netctl/ps50 &&
-cp /root/OS/ConfigFiles/bashrc /home/anton/.bashrc
+cp /root/OS/ConfigFiles/bashrc /home/anton/.bashrc &&
+cp /root/OS/ConfigFiles/asoundrc /home/anton/.asoundrc &&
+cp /root/OS/ConfigFiles/modprobe.conf /etc/modprobe.d/modprobe.conf

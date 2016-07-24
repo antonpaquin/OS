@@ -3,5 +3,4 @@ docker run \
   -v /home/anton:/home/user \
   -e DISPLAY=$DISPLAY \
   -d \
-  --name atom \
   atom
