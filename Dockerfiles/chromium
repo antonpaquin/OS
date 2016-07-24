@@ -12,5 +12,5 @@ RUN \
      chromium-l10n \
   && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT [ "/usr/bin/chromium" ]
-CMD [ "--user-data-dir=/data" ]
+#At some point Arch will add user namespace support and I can have chrome sandboxing again"
+ENTRYPOINT su -c "chromium --user-data-dir=/data --no-sandbox" user

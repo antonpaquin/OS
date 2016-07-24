@@ -8,3 +8,4 @@ install() {
 
 install atom
 install chromium
+install sysinfo

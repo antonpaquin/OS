@@ -1,7 +1,10 @@
 docker run \
   -v /home/anton/data/chromium:/data \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
+  --device /dev/dri \
+  --device /dev/snd \
   -e DISPLAY=$DISPLAY \
+  --group-add audio \
   -d \
   --name chromium \
   chromium

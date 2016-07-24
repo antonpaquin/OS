@@ -2,4 +2,6 @@ docker run \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v /home/anton:/home/user \
   -e DISPLAY=$DISPLAY \
+  -d \
+  --name atom \
   atom
