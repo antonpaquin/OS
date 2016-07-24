@@ -8,6 +8,7 @@ install() {
 
 mkdir -p /usr/dockerfiles/sysinfo
 cp /root/OS/ConfigFiles/sysinfo.sh /usr/dockerfiles/sysinfo/sysinfo.sh
+cp /root/OS/ConfigFiles/asoundrc /usr/dockerfiles/chromium/asoundrc
 
 install atom
 install chromium
