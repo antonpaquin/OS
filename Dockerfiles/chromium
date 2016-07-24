@@ -13,12 +13,7 @@ RUN \
      alsa-utils \
   && rm -rf /var/lib/apt/lists/*
 
-COPY asoundrc /home/user/.asoundrc
-
-RUN usermod -a -G audio user
-
-USER user
+COPY asoundrc /root/.asoundrc
 
 #At some point Arch will add user namespace support and I can have chrome sandboxing again"
-ENTRYPOINT [ "chromium" ] 
-CMD [ "--user-data-dir=/data --no-sandbox" ]
+ENTRYPOINT chromium --user-data-dir=/data --no-sandbox

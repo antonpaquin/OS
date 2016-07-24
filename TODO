@@ -1,10 +1,26 @@
 Sound on chromium
-urxvt (zsh?)
+
+#Basics
 pulseaudio (?)
 nautilus (host?)
-VMware/windows
-Dolphin (emulator)
-Libreoffice
-Jetbrains
-feh / fehbg
-Osu
+libreoffice
+vlc (?)
+webcam / mic apps
+
+#Custom
+vmware / windows
+jetbrains
+
+#Rice
+Lemonbar
+urxvt (zsh?)
+feh
+rofi
+bswpm (?)
+some kind of dock?
+(rice refind)
+
+#Games
+dolphin
+osu
+steam
