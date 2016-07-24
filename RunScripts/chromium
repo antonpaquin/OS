@@ -5,6 +5,5 @@ docker run \
   --device /dev/snd \
   -e DISPLAY=$DISPLAY \
   --group-add audio \
-  -d \
   --name chromium \
   chromium

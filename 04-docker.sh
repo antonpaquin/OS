@@ -6,6 +6,9 @@ install() {
   docker build -t $1 /usr/dockerfiles/$1
 }
 
+mkdir -p /usr/dockerfiles/sysinfo
+cp /root/OS/ConfigFiles/sysinfo.sh /usr/dockerfiles/sysinfo/sysinfo.sh
+
 install atom
 install chromium
 install sysinfo

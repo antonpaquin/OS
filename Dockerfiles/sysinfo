@@ -1,0 +1,14 @@
+FROM debian:jessie
+MAINTAINER Anton Paquin <antonpaquin@gmail.com>
+
+RUN useradd -m user
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+     acpi \
+  && rm -rf /var/lib/apt/lists/*
+
+COPY sysinfo.sh /home/user/sysinfo.sh
+RUN chmod +x /home/user/sysinfo.sh
+
+ENTRYPOINT [ "/home/user/sysinfo.sh" ]
