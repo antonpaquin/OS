@@ -9,6 +9,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 COPY sysinfo.sh /home/user/sysinfo.sh
-RUN chmod +x /home/user/sysinfo.sh
+
+RUN echo "US/Pacific" > /etc/timezone && \
+    dpkg-reconfigure -f noninteractive tzdata
 
 ENTRYPOINT [ "/home/user/sysinfo.sh" ]

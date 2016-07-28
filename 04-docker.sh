@@ -7,9 +7,19 @@ install() {
 }
 
 mkdir -p /usr/dockerfiles/sysinfo
-cp /root/OS/ConfigFiles/sysinfo.sh /usr/dockerfiles/sysinfo/sysinfo.sh
+cp -p /root/OS/Resources/sysinfo.sh /usr/dockerfiles/sysinfo/sysinfo.sh
+
+mkdir -p /usr/dockerfiles/chromium
 cp /root/OS/ConfigFiles/asoundrc /usr/dockerfiles/chromium/asoundrc
+
+mkdir -p /usr/dockerfiles/lemonbar
+cp -p /root/OS/ConfigFiles/lemonbar.sh /usr/dockerfiles/lemonbar/lemonbar.sh
+cp -p /root/OS/Resources/lemonbar_r.sh /usr/dockerfiles/lemonbar/lemonbar_r.sh
+
 
 install atom
 install chromium
 install sysinfo
+install libreoffice
+install lemonbar
+install playground

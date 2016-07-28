@@ -1,5 +1,7 @@
 docker run \
-  -v /home/anton/data/chromium:/data \
+  -v /home/anton/.data/chromium:/data \
+  -v /home/anton/Downloads:/downloads \
+  -v /home/anton/Pictures:/pictures \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v /dev/shm:/dev/shm \
   --device /dev/dri \
