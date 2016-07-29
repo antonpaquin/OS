@@ -1,4 +1,4 @@
 docker run \
-  -v /home/anton/.sysinfo:/sysinfo \
+  -v /home/anton/.sysinfo:/root/sysinfo \
   -d \
   sysinfo
