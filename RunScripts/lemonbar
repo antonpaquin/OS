@@ -1,0 +1,6 @@
+docker run \
+  -v /home/anton/.sysinfo:/root/sysinfo \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -e DISPLAY=$DISPLAY \
+  -d \
+  lemonbar

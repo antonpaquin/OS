@@ -1,0 +1,10 @@
+
+# Run Libreoffice in a container
+
+docker run \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /home/anton/Documents:/root/documents \
+  -e DISPLAY=$DISPLAY \
+  -d \
+  libreoffice

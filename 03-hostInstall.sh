@@ -26,6 +26,7 @@ pacman -S --noconfirm lightdm lightdm-gtk-greeter &&
 echo "greeter-session=lightdm-gtk-greeter" >> /etc/lightdm/lightdm.conf &&
 
 pacman -S --noconfirm fluxbox &&
+pacman -S --noconfirm bswpm &&
 
 pacman -S --noconfirm git &&
 git config --global user.email "antonpaquin@gmail.com" &&
