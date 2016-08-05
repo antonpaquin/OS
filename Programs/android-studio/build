@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cp /root/OS/Programs/android-studio/Runscript /usr/dockerscripts/android-studio &&
+chmod +x /usr/dockerscripts/android-studio &&
+mkdir -p /usr/dockerfiles/android-studio &&
+cp /root/OS/Programs/android-studio/Dockerfile /usr/dockerfiles/android-studio/Dockerfile &&
+#docker build -t android-studio /usr/dockerfiles/android-studio &&
+
+cp /root/OS/Programs/android-studio/android-studio-ide-143.2915827-linux.zip /usr/dockerfiles/android-studio

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cp /root/OS/Programs/chromium/Runscript /usr/dockerscripts/chromium &&
+chmod +x /usr/dockerscripts/chromium &&
+mkdir -p /usr/dockerfiles/chromium &&
+cp /root/OS/Programs/chromium/Dockerfile /usr/dockerfiles/chromium/Dockerfile &&
+docker build -t chromium /usr/dockerfiles/chromium &&
+
+cp /root/OS/ConfigFiles/asoundrc /usr/dockerfiles/chromium/asoundrc

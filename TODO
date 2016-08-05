@@ -1,6 +1,6 @@
 #Basics
 pulseaudio (?)
-nautilus (host?)
+nautilus (host?) (!-- SysExtra --)
 vlc (?)
 webcam / mic apps
 
@@ -21,3 +21,14 @@ some kind of dock?
 dolphin
 osu
 steam
+
+
+
+--> Migrate sysinfo to sysextra
+--> Rebuild atom (dockerfile should be ready)
+--> Get android SDK & package with AndroidStudio
+--> Install rancher
+--> Reboot (4-8-16 all important things are on -v's) and get bspwm
+--> Add nautilus to sysextra
+--> I want to try a rebuild? Maybe on a chromebook or something
+--> Better lemonbar

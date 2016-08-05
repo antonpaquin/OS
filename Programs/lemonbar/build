@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cp /root/OS/Programs/lemonbar/Runscript /usr/dockerscripts/lemonbar &&
+chmod +x /usr/dockerscripts/lemonbar &&
+mkdir -p /usr/dockerfiles/lemonbar &&
+cp /root/OS/Programs/lemonbar/Dockerfile /usr/dockerfiles/lemonbar/Dockerfile &&
+
+cp -p /root/OS/Programs/lemonbar/lemonbar.sh /usr/dockerfiles/lemonbar/lemonbar.sh &&
+cp -p /root/OS/Programs/lemonbar/lemonbar_r.sh /usr/dockerfiles/lemonbar/lemonbar_r.sh &&
+
+docker build -t lemonbar /usr/dockerfiles/lemonbar

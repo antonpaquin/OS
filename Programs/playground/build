@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/playground/Runscript /usr/dockerscripts/playground &&
+chmod +x /usr/dockerscripts/playground &&
+mkdir -p /usr/dockerfiles/playground &&
+cp /root/OS/Programs/playground/Dockerfile /usr/dockerfiles/playground/Dockerfile &&
+docker build -t playground /usr/dockerfiles/playground

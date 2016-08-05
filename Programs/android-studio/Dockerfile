@@ -5,14 +5,15 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       lib32z1 \
       lib32ncurses5 \
-      lib32bz2-1.0 \
+      libbz2-1.0 \
       lib32stdc++6 \
-      unzip
+      unzip \
+      zenity \
+      default-jdk \
+      git
 
 COPY android-studio-ide-143.2915827-linux.zip /root/android-studio/
-COPY jdk-8u101-linux-x64.tar.gz /root/jdk/
 
-RUN unzip /root/android-studio/android-studio-ide-143.2915827-linux.zip && \
-    tar -xf /root/jdk/jdk-8u101-linux-x64.tar.gz
+RUN unzip /root/android-studio/android-studio-ide-143.2915827-linux.zip -d /root
 
 ENTRYPOINT [ "/bin/bash" ]

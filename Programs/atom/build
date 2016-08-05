@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/atom/Runscript /usr/dockerscripts/atom &&
+chmod +x /usr/dockerscripts/atom &&
+mkdir -p /usr/dockerfiles/atom &&
+cp /root/OS/Programs/atom/Dockerfile /usr/dockerfiles/atom/Dockerfile &&
+docker build -t atom /usr/dockerfiles/atom

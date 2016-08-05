@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cp /root/OS/Programs/sysextra/Runscript /usr/dockerscripts/sysextra &&
+chmod +x /usr/dockerscripts/sysextra &&
+mkdir -p /usr/dockerfiles/sysextra &&
+cp /root/OS/Programs/sysextra/Dockerfile /usr/dockerfiles/sysextra/Dockerfile &&
+cp -p /root/OS/Programs/sysextra/sysinfo.sh /usr/dockerfiles/sysextra/sysinfo.sh &&
+
+docker build -t sysextra /usr/dockerfiles/sysextra

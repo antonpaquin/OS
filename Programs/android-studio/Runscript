@@ -1,0 +1,8 @@
+docker run \
+  -v /home/anton/Programming/android-studio:/root/projects \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v /home/anton/.data/android-sdk:/root/Android/Sdk \
+  -e DISPLAY=$DISPLAY \
+  --entrypoint=/root/android-studio/bin/studio.sh \
+  -d \
+  android-studio:installed

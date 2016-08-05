@@ -14,12 +14,12 @@ RUN apt-get update && \
     libxtst6 \
     libnss3 \
     libasound2 \
-    xdg-utils \ 
+    xdg-utils \
     curl \
     ca-certificates
 
-RUN curl -L https://atom.io/download/deb > /home/user/atom-amd64.deb && \
+RUN curl -L https://github.com/atom/atom/releases/download/v1.9.2/atom-amd64.deb > /home/user/atom-amd64.deb && \
     dpkg -i /home/user/atom-amd64.deb && \
-    rm -rf /home/user/atom-amd64.deb 
+    rm -rf /home/user/atom-amd64.deb
 
 ENTRYPOINT [ "atom", "--foreground" ]

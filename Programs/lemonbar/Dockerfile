@@ -4,10 +4,13 @@ MAINTAINER Anton Paquin <antonpaquin@gmail.com>
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       lemonbar \
+      fontconfig \
       unifont \
+      fonts-font-awesome \
  && rm -rf /var/lib/apt/lists/*
 
-COPY lemonbar.sh /root/lemonbar.sh
-COPY lemonbar_r.sh /root/lemonbar_r.sh
+COPY lemonbar.sh \
+     lemonbar_r.sh \
+     /root/
 
 ENTRYPOINT [ "/root/lemonbar_r.sh" ]

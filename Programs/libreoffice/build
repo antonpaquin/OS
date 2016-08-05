@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/libreoffice/Runscript /usr/dockerscripts/libreoffice &&
+chmod +x /usr/dockerscripts/libreoffice &&
+mkdir -p /usr/dockerfiles/libreoffice &&
+cp /root/OS/Programs/libreoffice/Dockerfile /usr/dockerfiles/libreoffice/Dockerfile &&
+docker build -t libreoffice /usr/dockerfiles/libreoffice
