@@ -6,10 +6,9 @@ webcam / mic apps
 
 #Custom
 vmware / windows
-jetbrains
+jetbrains suites
 
 #Rice
-Lemonbar
 urxvt (zsh?)
 feh
 rofi
@@ -18,17 +17,13 @@ some kind of dock?
 (rice refind)
 
 #Games
-dolphin
 osu
 steam
 
 
-
---> Migrate sysinfo to sysextra
---> Rebuild atom (dockerfile should be ready)
---> Get android SDK & package with AndroidStudio
---> Install rancher
---> Reboot (4-8-16 all important things are on -v's) and get bspwm
+--> Add sxhkd to host and move to bspwm
 --> Add nautilus to sysextra
---> I want to try a rebuild? Maybe on a chromebook or something
---> Better lemonbar
+--> more lemonbar
+--> get VM's to work
+--> stick everything on dockerhub and then port it all to rancher? (Requires Hiroshima)
+--> I want to try a rebuild -- Maybe on a chromebook or something

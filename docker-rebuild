@@ -1,1 +1,6 @@
+#!/bin/sh
+if [ $(expr $(stat -c %a /root/OS/Programs/$1/build) / 100 % 2) = 0 ]; then
+  chmod +x /root/OS/Programs/$1/build
+fi
+
 /root/OS/Programs/$1/build

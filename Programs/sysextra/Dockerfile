@@ -1,9 +1,9 @@
 FROM debian:jessie
 MAINTAINER Anton Paquin <antonpaquin@gmail.com>s
 
-RUN apt-get update \
+RUN  apt-get update \
   && apt-get install -y --no-install-recommends \
-     acpi \
+       acpi \
   && rm -rf /var/lib/apt/lists/*
 
 COPY sysinfo.sh /root/sysinfo.sh

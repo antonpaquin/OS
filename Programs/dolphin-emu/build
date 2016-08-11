@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/dolphin-emu/Runscript /usr/dockerscripts/dolphin-emu &&
+chmod +x /usr/dockerscripts/dolphin-emu &&
+mkdir -p /usr/dockerfiles/dolphin-emu &&
+cp /root/OS/Programs/dolphin-emu/Dockerfile /usr/dockerfiles/dolphin-emu/Dockerfile &&
+docker build -t dolphin-emu /usr/dockerfiles/dolphin-emu

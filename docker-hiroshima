@@ -1,0 +1,6 @@
+#!/bin/sh
+
+docker ps -a -q | xargs docker stop &&
+docker ps -a -q | xargs docker kill &&
+docker ps -a -q | xargs docker rmi &&
+chmod 660 /root/OS/docker-hiroshima

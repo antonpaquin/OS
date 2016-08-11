@@ -6,6 +6,7 @@ install() {
 #install android-studio
 install atom
 install chromium
+install dolphin-emu
 install lemonbar
 install libreoffice
 install playground
