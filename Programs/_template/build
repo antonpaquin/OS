@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/TEMPLATE/Runscript /usr/dockerscripts/TEMPLATE &&
+chmod +x /usr/dockerscripts/TEMPLATE &&
+mkdir -p /usr/dockerfiles/TEMPLATE &&
+cp /root/OS/Programs/TEMPLATE/Dockerfile /usr/dockerfiles/TEMPLATE/Dockerfile &&
+docker build -t TEMPLATE /usr/dockerfiles/TEMPLATE

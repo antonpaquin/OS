@@ -1,8 +1,6 @@
 FROM debian:jessie
 MAINTAINER Anton Paquin <antonpaquin@gmail.com>
 
-RUN useradd -m user
-
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
@@ -18,8 +16,8 @@ RUN apt-get update && \
     curl \
     ca-certificates
 
-RUN curl -L https://github.com/atom/atom/releases/download/v1.9.2/atom-amd64.deb > /home/user/atom-amd64.deb && \
-    dpkg -i /home/user/atom-amd64.deb && \
-    rm -rf /home/user/atom-amd64.deb
+RUN curl -L https://github.com/atom/atom/releases/download/v1.9.2/atom-amd64.deb > /root/atom-amd64.deb && \
+    dpkg -i /root/atom-amd64.deb && \
+    rm -rf /root/atom-amd64.deb
 
 ENTRYPOINT [ "atom", "--foreground" ]

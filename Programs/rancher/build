@@ -1,0 +1,4 @@
+#! /bin/sh
+
+cp -p /root/OS/Programs/rancher/Runscript /usr/dockerscripts/rancher &&
+chmod +x /usr/dockerscripts/rancher

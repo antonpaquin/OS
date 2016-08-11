@@ -1,1 +1,4 @@
-docker run -it playground
+docker run \
+  -it \
+  --name playground \
+  playground

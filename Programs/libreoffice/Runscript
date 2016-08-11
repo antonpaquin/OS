@@ -7,4 +7,5 @@ docker run \
   -v /home/anton/Documents:/root/documents \
   -e DISPLAY=$DISPLAY \
   -d \
+  --name libreoffice \
   libreoffice

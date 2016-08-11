@@ -1,0 +1,6 @@
+docker run \
+  -d \
+  --restart=always \
+  -p 8080:8080 \
+  --name rancher-server \
+  rancher/server

@@ -9,4 +9,5 @@ docker run \
   -e DISPLAY=$DISPLAY \
   --group-add audio \
   -d \
+  --name chromium \
   chromium
