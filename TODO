@@ -1,7 +1,7 @@
 #Basics
 pulseaudio (?)
 nautilus (host?) (!-- SysExtra --)
-vlc (?)
+mpv
 webcam / mic apps
 
 #Custom
@@ -10,11 +10,11 @@ jetbrains suites
 
 #Rice
 urxvt (zsh?)
-feh
 rofi
 bswpm (?)
 some kind of dock?
 (rice refind)
+compton?
 
 #Games
 osu
@@ -22,8 +22,12 @@ steam
 
 
 --> Add sxhkd to host and move to bspwm
---> Add nautilus to sysextra
+--> Add nautilus to docker-desktop
+--> Migrate to build + deploy + run (build, create, start)
+--> Ask dad for ports --> private registry
 --> more lemonbar
 --> get VM's to work
---> stick everything on dockerhub and then port it all to rancher? (Requires Hiroshima)
+--> stick everything on dockerhub and then port it all to rancher?
 --> I want to try a rebuild -- Maybe on a chromebook or something
+
+--> Put docker on argo/vega/carpathia!

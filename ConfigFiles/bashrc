@@ -11,4 +11,4 @@ PS1='[\u@\h \W]\$ '
 xhost + > /dev/null
 
 PATH=$PATH:/usr/dockerscripts
-
+XDG_CONFIG_HOME=/home/anton/.config

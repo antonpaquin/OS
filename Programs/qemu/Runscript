@@ -1,0 +1,7 @@
+docker run \
+  -v /home/anton/.common:/root/.common \
+  -v /tmp/.X11-unix \
+  -e DISPLAY=$DISPLAY \
+  -d \
+  --name qemu \
+  qemu

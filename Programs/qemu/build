@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/qemu/Runscript /usr/dockerscripts/qemu &&
+chmod +x /usr/dockerscripts/qemu &&
+mkdir -p /usr/dockerfiles/qemu &&
+cp /root/OS/Programs/qemu/Dockerfile /usr/dockerfiles/qemu/Dockerfile &&
+docker build -t qemu /usr/dockerfiles/qemu
