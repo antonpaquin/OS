@@ -51,6 +51,9 @@ pacman -S --noconfirm alsa-utils &&
 #In a pinch, wifi-menu is better than manually copying netctl confs
 pacman -S --noconfirm dialog &&
 
+pacman -S --noconfirm openssh &&
+pacman -S --noconfirm unzip &&
+
 #Shell
 pacman -S --noconfirm rxvt-unicode &&
 
@@ -63,6 +66,7 @@ mkdir /home/anton/Games &&
 mkdir /home/anton/Misc &&
 mkdir /home/anton/Pictures &&
 mkdir /home/anton/Programming &&
+mkdir /home/anton/.bin &&
 mkdir /home/anton/.common &&
 mkdir /home/anton/.config &&
 mkdir /home/anton/.data &&
@@ -70,9 +74,13 @@ mkdir /home/anton/.tmp &&
 
 #Moving around config files
 cp /root/OS/ConfigFiles/Networks/ps50 /etc/netctl/ps50 &&
-cp /root/OS/ConfigFiles/Networks/pnpWifi /etc/netctl/pnpWifi &&
+cp /root/OS/ConfigFiles/Networks/pnpwifi /etc/netctl/pnpwifi &&
 cp /root/OS/ConfigFiles/bashrc /home/anton/.bashrc &&
 cp /root/OS/ConfigFiles/asoundrc /home/anton/.asoundrc &&
 cp /root/OS/ConfigFiles/modprobe.conf /etc/modprobe.d/modprobe.conf &&
 cp /root/OS/ConfigFiles/fluxbox.keys /home/anton/.fluxbox/keys &&
-cp /root/OS/ConfigFiles/bspwmrc /home/anton/.config/bspwm/bspwmrc
+cp /root/OS/ConfigFiles/bspwmrc /home/anton/.config/bspwm/bspwmrc &&
+cp /root/OS/
+
+#Holy fuck permissions are annoying
+chmod +x /home/anton/.config/bspwm/bspwmrc

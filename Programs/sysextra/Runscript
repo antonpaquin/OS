@@ -2,4 +2,4 @@ docker run \
   -v /home/anton/.sysinfo:/root/sysinfo \
   -d \
   --name sysextra \
-  sysinfo
+  sysextra

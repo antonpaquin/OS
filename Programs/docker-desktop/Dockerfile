@@ -2,7 +2,8 @@ FROM debian:sid
 MAINTAINER Anton Paquin <antonpaquin@gmail.com>
 
 RUN  apt-get update \
-  && apt-get install -y --no-install-recommends \
+  && apt-get install -y --no-install-recommends --fix-missing \
+       python3 \
        lemonbar \
        fontconfig \
        unifont \
@@ -18,7 +19,7 @@ RUN  apt-get update \
 
 #Lemonbar, feh, rofi, dock, sxhkd
 
-COPY lemonbar.sh \
+COPY lemonbar.py \
      desktop_driver.sh \
      wallhaven-blue+white.jpg \
      sxhkdrc \

@@ -5,7 +5,7 @@ chmod +x /usr/dockerscripts/docker-desktop &&
 mkdir -p /usr/dockerfiles/docker-desktop &&
 cp /root/OS/Programs/docker-desktop/Dockerfile /usr/dockerfiles/docker-desktop/Dockerfile &&
 
-cp -p /root/OS/Programs/docker-desktop/lemonbar.sh /usr/dockerfiles/docker-desktop/lemonbar.sh &&
+cp -p /root/OS/Programs/docker-desktop/lemonbar.py /usr/dockerfiles/docker-desktop/lemonbar.py &&
 cp -p /root/OS/Programs/docker-desktop/desktop_driver.sh /usr/dockerfiles/docker-desktop/desktop_driver.sh &&
 cp -p /root/OS/Programs/docker-desktop/wallhaven-blue+white.jpg /usr/dockerfiles/docker-desktop/wallhaven-blue+white.jpg &&
 cp -p /root/OS/ConfigFiles/sxhkdrc /usr/dockerfiles/docker-desktop/sxhkdrc &&
