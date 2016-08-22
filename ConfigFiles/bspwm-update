@@ -9,6 +9,6 @@ for DESK in 1 2 3 4 5 6 7 8 9 10; do
     BSPWM_WINDOWS="$BSPWM_WINDOWS,$RES"
   fi
 done
-echo "$BSPWM_WINDOWS" > /home/anton/.sysinfo/bspwm_windows
+echo "$BSPWM_WINDOWS" >> /home/anton/.sysinfo/bspwm_windows
 FOCUSED_DESK=$(bspc query -D -d focused)
-echo "$FOCUSED_DESK" > /home/anton/.sysinfo/bspwm_desktops
+echo "$FOCUSED_DESK" >> /home/anton/.sysinfo/bspwm_desktops

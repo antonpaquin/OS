@@ -9,5 +9,4 @@ bspc config border_width 5 &
 bspc config window_gap 10 &
 
 docker start docker-desktop
-/root/OS/ConfigFiles/bspwm-pipes.sh &
-/root/OS/ConfigFiles/host-info.sh &
+/root/OS/ConfigFiles/sxhkd-pipes.sh &

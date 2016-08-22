@@ -1,14 +1,14 @@
 #Go to desktop 1-9
 super + {1-9,0}
-  echo "bspc desktop -f '^{1-9,10}'" >> /root/common/sxhkd
+  echo "bspc desktop -f '^{1-9,10}' && bspwm-update" >> /root/common/sxhkd
 
 #Send to desktop 1-9
 super + shift + {1-9,0}
-  echo "bspc node -d '^{1-9,10}'" >> /root/common/sxhkd
+  echo "bspc node -d '^{1-9,10}' && bspwm-update" >> /root/common/sxhkd
 
 #Go to desktop -1/+1
 super + shift + {Left,Right}
-  echo "bspc desktop -f {prev,next}" >> /root/common/sxhkd
+  echo "bspc desktop -f {prev,next} && bspwm-update" >> /root/common/sxhkd
 
 #rofi
 super + space
@@ -16,7 +16,7 @@ super + space
 
 #urxvt
 super + Return
-  echo "urxvt &" >> /root/common/sxhkd
+  echo "urxvt & bspwm-update" >> /root/common/sxhkd
 
 #Kill
 super + Escape
@@ -27,11 +27,11 @@ super + {m,u}
 
 #Jump around windows
 super + {h,j,k,l}
-  echo "bspc node -f {west,south,north,east}" >> /root/common/sxhkd
+  echo "bspc node -f {west,south,north,east} && bspwm-update" >> /root/common/sxhkd
 
 #Move windows around
 super + {Left,Down,Up,Right}
-  echo "bspc node -s {west,south,north,east}" >> /root/common/sxhkd
+  echo "bspc node -s {west,south,north,east} && bspwm-update" >> /root/common/sxhkd
 
 #From some dude on reddit?
 #super + button{1-3}

@@ -19,6 +19,6 @@ cat /root/sysinfo/nothing > /root/sysinfo/bspwm_windows &
 cat /root/sysinfo/nothing > /root/sysinfo/acpi &
 cat /root/sysinfo/nothing > /root/sysinfo/date &
 
-python3 /root/lemonbar.py | lemonbar -g"$WIDTH"x"$HEIGHT"+"$XOFFSET"+"$YOFFSET" -B $BGCOLOR -F $FGCOLOR &
+python3 -u /root/lemonbar.py | lemonbar -g"$WIDTH"x"$HEIGHT"+"$XOFFSET"+"$YOFFSET" -B $BGCOLOR -F $FGCOLOR &
 
 cat /root/common/nothing

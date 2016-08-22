@@ -48,7 +48,9 @@ def format_acpi():
 ################################################################################
 
 def show():
-    print('%{{l}}{}{}%{{c}}{}%{{r}}{}{}'.format(lbuf, left(), center(), right(), rbuf))
+    global lock
+    lock=False
+    #print('%{{l}}{}{}%{{c}}{}%{{r}}{}{}'.format(lbuf, left(), center(), right(), rbuf))
 
 ################################################################################
 
@@ -58,7 +60,7 @@ data = {}
 data['acpi'] = 'xx'
 def acpi(line):
     try:
-        return re.search('(?<=, )[0-9]+(?=%)',line).group(0)
+        return re.search('[0-9]+(?=%)',line).group(0)
     except Exception:
         return 'xx'
 
@@ -95,3 +97,12 @@ def zwrap(comp):
 
 for f in components:
     threading.Thread(target=zwrap(f)).start()
+
+global lock
+lock = False
+while(True):
+    pass
+    while(lock):
+       time.sleep(0.2)
+    print('%{{l}}{}{}%{{c}}{}%{{r}}{}{}'.format(lbuf, left(), center(), right(), rbuf))
+    lock = True
