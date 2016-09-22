@@ -1,0 +1,42 @@
+What do I want to track with puppet?
+
+#Config Files
+  ()asoundrc
+  ()bashrc
+  ()bspwmrc
+  ()dhcpd.conf
+  ()modprobe.conf
+  ()sxhkdrc
+  ()Networks:
+    ()pnpwifi
+    ()ps50
+
+#Scripts
+  ()bspwm-update
+  ()sxhkd-pipes
+
+#Packages
+  (p)xorg-server
+  (p)xorg-xinit
+  (p)xorg-xinput
+  (p)xorg-xhost
+
+  ()xf86-input-libinput
+  ()xf86-video-intel
+
+  ()lightdm
+  ()lightdm-gtk-greeter
+
+  ()bspwm
+
+  ()git
+  ()alsa-utils
+  ()dialog
+  ()openssh
+  ()unzip
+  ()rxvt-unicode
+  ()virtualbox
+
+
+
+#Docker containers built for x86 on BlueRidge

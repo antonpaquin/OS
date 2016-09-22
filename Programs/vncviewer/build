@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/vncviewer/Runscript /usr/dockerscripts/vncviewer &&
+chmod +x /usr/dockerscripts/vncviewer &&
+mkdir -p /usr/dockerfiles/vncviewer &&
+cp /root/OS/Programs/vncviewer/Dockerfile /usr/dockerfiles/vncviewer/Dockerfile &&
+docker build -t vncviewer /usr/dockerfiles/vncviewer

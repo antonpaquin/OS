@@ -2,6 +2,6 @@ docker run \
   -v /home/anton/.common:/root/common \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=$DISPLAY \
-  -d \
-  --name TEMPLATE \
-  TEMPLATE
+  -it \
+  --name vncviewer \
+  vncviewer

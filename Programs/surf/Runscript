@@ -1,7 +1,7 @@
 docker run \
-  -it \
+  -v /home/anton/.common:/root/common \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=$DISPLAY \
-  --name playground \
-  --privileged \
-  playground
+  -d \
+  --name surf \
+  surf

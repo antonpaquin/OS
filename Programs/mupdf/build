@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/mupdf/Runscript /usr/dockerscripts/mupdf &&
+chmod +x /usr/dockerscripts/mupdf &&
+mkdir -p /usr/dockerfiles/mupdf &&
+cp /root/OS/Programs/mupdf/Dockerfile /usr/dockerfiles/mupdf/Dockerfile &&
+docker build -t mupdf /usr/dockerfiles/mupdf

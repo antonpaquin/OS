@@ -10,3 +10,4 @@ bspc config window_gap 10 &
 
 docker start docker-desktop
 /root/OS/ConfigFiles/sxhkd-pipes.sh &
+/root/OS/ConfigFiles/bspwm-update &

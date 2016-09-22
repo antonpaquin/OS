@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/surf/Runscript /usr/dockerscripts/surf &&
+chmod +x /usr/dockerscripts/surf &&
+mkdir -p /usr/dockerfiles/surf &&
+cp /root/OS/Programs/surf/Dockerfile /usr/dockerfiles/surf/Dockerfile &&
+docker build -t surf /usr/dockerfiles/surf

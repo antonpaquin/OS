@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/kicad/Runscript /usr/dockerscripts/kicad &&
+chmod +x /usr/dockerscripts/kicad &&
+mkdir -p /usr/dockerfiles/kicad &&
+cp /root/OS/Programs/kicad/Dockerfile /usr/dockerfiles/kicad/Dockerfile &&
+docker build -t kicad /usr/dockerfiles/kicad

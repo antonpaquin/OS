@@ -4,6 +4,7 @@ docker run \
   -v /home/anton/Pictures:/pictures \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v /dev/shm:/dev/shm \
+  -v /var/run:/var/run \
   --device /dev/dri \
   --device /dev/snd \
   -e DISPLAY=$DISPLAY \

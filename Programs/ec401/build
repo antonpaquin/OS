@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/ec401/Runscript /usr/dockerscripts/ec401 &&
+chmod +x /usr/dockerscripts/ec401 &&
+mkdir -p /usr/dockerfiles/ec401 &&
+cp /root/OS/Programs/ec401/Dockerfile /usr/dockerfiles/ec401/Dockerfile &&
+docker build -t ec401 /usr/dockerfiles/ec401

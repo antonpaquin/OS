@@ -1,14 +1,15 @@
 #!/bin/sh
-
-BSPWM_WINDOWS=""
-for DESK in 1 2 3 4 5 6 7 8 9 10; do
-  RES=$(bspc query -T -n @^$DESK:.automatic | grep -o -P "(?<=className\":\").*?(?=\",\")")
-  if [ "$RES" == "" ]; then
-    BSPWM_WINDOWS="$BSPWM_WINDOWS,$DESK"
-  else
-    BSPWM_WINDOWS="$BSPWM_WINDOWS,$RES"
-  fi
+while sleep 0.2; do
+  BSPWM_WINDOWS=""
+  for DESK in 1 2 3 4 5 6 7 8 9 10; do
+    RES=$(bspc query -T -n @^$DESK:.automatic | grep -o -P "(?<=className\":\").*?(?=\",\")")
+    if [ "$RES" == "" ]; then
+      BSPWM_WINDOWS="$BSPWM_WINDOWS,$DESK"
+    else
+      BSPWM_WINDOWS="$BSPWM_WINDOWS,$RES"
+    fi
+  done
+  echo "$BSPWM_WINDOWS" > /home/anton/.sysinfo/bspwm_windows
+  FOCUSED_DESK=$(bspc query -D -d focused)
+  echo "$FOCUSED_DESK" > /home/anton/.sysinfo/bspwm_desktops
 done
-echo "$BSPWM_WINDOWS" >> /home/anton/.sysinfo/bspwm_windows
-FOCUSED_DESK=$(bspc query -D -d focused)
-echo "$FOCUSED_DESK" >> /home/anton/.sysinfo/bspwm_desktops

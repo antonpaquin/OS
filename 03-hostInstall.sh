@@ -36,7 +36,6 @@ pacman -S --noconfirm lightdm lightdm-gtk-greeter &&
 echo "greeter-session=lightdm-gtk-greeter" >> /etc/lightdm/lightdm.conf &&
 
 #And WM's
-pacman -S --noconfirm fluxbox &&
 pacman -S --noconfirm bswpm &&
 
 #And git, but actually I'm fine with this

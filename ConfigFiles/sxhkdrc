@@ -1,42 +1,38 @@
 #Go to desktop 1-9
 super + {1-9,0}
-  echo "bspc desktop -f '^{1-9,10}' && bspwm-update" >> /root/common/sxhkd
+  echo "bspc desktop -f '^{1-9,10}'" >> /root/common/sxhkd
 
 #Send to desktop 1-9
 super + shift + {1-9,0}
-  echo "bspc node -d '^{1-9,10}' && bspwm-update" >> /root/common/sxhkd
+  echo "bspc node -d '^{1-9,10}'" >> /root/common/sxhkd
 
 #Go to desktop -1/+1
 super + shift + {Left,Right}
-  echo "bspc desktop -f {prev,next} && bspwm-update" >> /root/common/sxhkd
-
-#rofi
-super + space
-  rofi
+  echo "bspc desktop -f {prev,next}" >> /root/common/sxhkd
 
 #urxvt
 super + Return
-  echo "urxvt & bspwm-update" >> /root/common/sxhkd
-
-#Kill
-super + Escape
-  xkill
+  echo "urxvt &" >> /root/common/sxhkd
 
 super + {m,u}
   # {less,more} gaps
 
 #Jump around windows
 super + {h,j,k,l}
-  echo "bspc node -f {west,south,north,east} && bspwm-update" >> /root/common/sxhkd
+  echo "bspc node -f {west,south,north,east}" >> /root/common/sxhkd
 
 #Move windows around
 super + {Left,Down,Up,Right}
-  echo "bspc node -s {west,south,north,east} && bspwm-update" >> /root/common/sxhkd
+  echo "bspc node -s {west,south,north,east}" >> /root/common/sxhkd
 
-#From some dude on reddit?
-#super + button{1-3}
-#  bspc pointer -g {move,resize_side,resize_corner}
-#super + !button{1-3}
-#  bspc pointer -t %i %i
-#super + @button{1-3}
-#  bspc pointer -u
+#Focus on click
+~button1
+  echo "bspc pointer -g focus" >> /root/common/sxhkd
+
+#_should_ allow window sizing
+super + button1
+  echo "bspc pointer -g resize_corner" >> /root/common/sxhkd
+super + !button1
+  echo "bspc pointer --track %i %i" >> /root/common/sxhkd
+super + @button1
+  echo "bspc pointer -u" >> /root/common/sxhkd

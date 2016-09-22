@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/hexchat/Runscript /usr/dockerscripts/hexchat &&
+chmod +x /usr/dockerscripts/hexchat &&
+mkdir -p /usr/dockerfiles/hexchat &&
+cp /root/OS/Programs/hexchat/Dockerfile /usr/dockerfiles/hexchat/Dockerfile &&
+docker build -t hexchat /usr/dockerfiles/hexchat

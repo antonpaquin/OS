@@ -10,7 +10,8 @@ rbuf = '   '
 
 bspwm_obuf = '  '
 bspwm_ibuf = ' '
-bspwm_bgcolor = '#181818'
+bspwm_bgcolor = '#1a1e20'
+bspwm_hlcolor = '#6287A2'
 
 def color(inner, color):
     return '%{{B{}}}{}%{{B-}}'.format(color, inner)
@@ -31,7 +32,13 @@ def center():
 def format_bspwm():
     currentDesk = data['bspwm_desktops']
     windows = data['bspwm_windows']
-    return bspwm_obuf.join([color(win_b, bspwm_bgcolor) for win_b in [wrap(win_a, bspwm_ibuf) for win_a in windows]])
+    windows = [wrap(win, bspwm_ibuf) for win in windows]
+    for i in range(len(windows)):
+        if i==currentDesk-1:
+            windows[i] = color(windows[i], bspwm_hlcolor)
+        else:
+            windows[i] = color(windows[i], bspwm_bgcolor)
+    return bspwm_obuf.join(windows)
 
 ################################################################################
 
@@ -47,12 +54,6 @@ def format_acpi():
 
 ################################################################################
 
-def show():
-    global lock
-    lock=False
-    #print('%{{l}}{}{}%{{c}}{}%{{r}}{}{}'.format(lbuf, left(), center(), right(), rbuf))
-
-################################################################################
 
 components = ['acpi','date','bspwm_windows','bspwm_desktops']
 data = {}
@@ -91,18 +92,13 @@ def zwrap(comp):
             line = file.readline()
             if line != '':
                 data[comp] = targetf(line)
-                show()
-            time.sleep(0.5)
+            else:
+                time.sleep(0.2)
     return f
 
 for f in components:
     threading.Thread(target=zwrap(f)).start()
 
-global lock
-lock = False
 while(True):
-    pass
-    while(lock):
-       time.sleep(0.2)
+    time.sleep(0.2)
     print('%{{l}}{}{}%{{c}}{}%{{r}}{}{}'.format(lbuf, left(), center(), right(), rbuf))
-    lock = True

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cp /root/OS/Programs/virtualbox/Runscript /usr/dockerscripts/virtualbox &&
+chmod +x /usr/dockerscripts/virtualbox &&
+mkdir -p /usr/dockerfiles/virtualbox &&
+cp /root/OS/Programs/virtualbox/Dockerfile /usr/dockerfiles/virtualbox/Dockerfile &&
+
+cp /root/OS/Programs/virtualbox/winXP.vdi /usr/dockerfiles/virtualbox/winXP.vdi &&
+
+docker build -t virtualbox /usr/dockerfiles/virtualbox

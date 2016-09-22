@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/blender/Runscript /usr/dockerscripts/blender &&
+chmod +x /usr/dockerscripts/blender &&
+mkdir -p /usr/dockerfiles/blender &&
+cp /root/OS/Programs/blender/Dockerfile /usr/dockerfiles/blender/Dockerfile &&
+docker build -t blender /usr/dockerfiles/blender

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/pinta/Runscript /usr/dockerscripts/pinta &&
+chmod +x /usr/dockerscripts/pinta &&
+mkdir -p /usr/dockerfiles/pinta &&
+cp /root/OS/Programs/pinta/Dockerfile /usr/dockerfiles/pinta/Dockerfile &&
+docker build -t pinta /usr/dockerfiles/pinta

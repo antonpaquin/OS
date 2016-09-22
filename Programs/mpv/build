@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/mpv/Runscript /usr/dockerscripts/mpv &&
+chmod +x /usr/dockerscripts/mpv &&
+mkdir -p /usr/dockerfiles/mpv &&
+cp /root/OS/Programs/mpv/Dockerfile /usr/dockerfiles/mpv/Dockerfile &&
+docker build -t mpv /usr/dockerfiles/mpv

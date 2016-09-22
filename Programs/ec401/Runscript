@@ -1,7 +1,8 @@
 docker run \
   -v /home/anton/.common:/root/common \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v "/home/anton/Documents/School/BU 2016 Fall/EC401":/root/EC401 \
   -e DISPLAY=$DISPLAY \
-  -d \
-  --name TEMPLATE \
-  TEMPLATE
+  -it \
+  --name ec401 \
+  ec401

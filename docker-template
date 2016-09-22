@@ -1,0 +1,5 @@
+#!/bin/sh
+mkdir -p /root/OS/Programs/$1 &&
+sed s/TEMPLATE/$1/g /root/OS/Programs/_template/build > /root/OS/Programs/$1/build &&
+sed s/TEMPLATE/$1/g /root/OS/Programs/_template/Dockerfile > /root/OS/Programs/$1/Dockerfile &&
+sed s/TEMPLATE/$1/g /root/OS/Programs/_template/Runscript > /root/OS/Programs/$1/Runscript

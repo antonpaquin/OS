@@ -3,7 +3,13 @@ MAINTAINER Anton Paquin <antonpaquin@gmail.com>
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
-        TEMPLATE \
+        python3 \
+        python-pip \
+        build-essential \
+        python-dev \
+        python-numpy \
     && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT [ "TEMPLATE" ]
+RUN pip install numpy
+
+ENTRYPOINT [ "/bin/bash" ]

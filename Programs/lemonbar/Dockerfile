@@ -3,18 +3,18 @@ MAINTAINER Anton Paquin <antonpaquin@gmail.com>
 
 RUN  apt-get update \
   && apt-get install -y --no-install-recommends --fix-missing \
-       feh \
-       sxhkd \
-       x11-utils \
-  && rm -rf /var/lib/apt/lists/*
+       python3 \
+       lemonbar \
+       fontconfig \
+       unifont \
+       fonts-font-awesome
 
 #Lemonbar, feh, rofi, dock, sxhkd
 
-COPY desktop_driver.sh \
-     wallhaven-blue+white.jpg \
-     sxhkdrc \
+COPY lemonbar.py \
+     lemonbar.sh \
      /root/
 
 ENV SHELL /bin/sh
 
-ENTRYPOINT [ "/root/desktop_driver.sh" ]
+ENTRYPOINT [ "/root/lemonbar.sh" ]
