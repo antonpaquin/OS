@@ -1,8 +1,15 @@
-docker run \
-  -v /home/anton/.sysinfo:/root/sysinfo \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v /home/anton/.common:/root/common \
-  -e DISPLAY=$DISPLAY \
-  -d \
-  --name lemonbar \
-  lemonbar
+STATUS=$(docker inspect --format="{{ .State.Running }}" lemonbar 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs lemonbar
+elif [ "$STATUS" == "false" ]; then
+  docker start lemonbar
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /home/anton/.sysinfo:/root/sysinfo \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name lemonbar \
+    lemonbar
+fi

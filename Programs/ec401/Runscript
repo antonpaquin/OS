@@ -1,8 +1,15 @@
-docker run \
-  -v /home/anton/.common:/root/common \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v "/home/anton/Documents/School/BU 2016 Fall/EC401":/root/EC401 \
-  -e DISPLAY=$DISPLAY \
-  -it \
-  --name ec401 \
-  ec401
+STATUS=$(docker inspect --format="{{ .State.Running }}" ec401 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs ec401
+elif [ "$STATUS" == "false" ]; then
+  docker start ec401
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v "/home/anton/Documents/School/BU 2016 Fall/EC401":/root/EC401 \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name ec401 \
+    ec401
+fi

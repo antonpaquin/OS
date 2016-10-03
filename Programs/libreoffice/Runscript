@@ -1,11 +1,19 @@
 
 # Run Libreoffice in a container
 
-docker run \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v /etc/localtime:/etc/localtime:ro \
-  -v /home/anton/Documents:/root/documents \
-  -e DISPLAY=$DISPLAY \
-  -d \
-  --name libreoffice \
-  libreoffice
+STATUS=$(docker inspect --format="{{ .State.Running }}" libreoffice 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs libreoffice
+elif [ "$STATUS" == "false" ]; then
+  docker start libreoffice
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /home/anton/Documents:/root/documents \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name libreoffice \
+    libreoffice
+fi

@@ -1,9 +1,17 @@
-#!/bin/bash
-docker run \
-  -v /home/anton/.common:/root/common \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e DISPLAY=$DISPLAY \
-  -it \
-  --name mupdf \
-  --entrypoint="mupdf $1" \
-  mupdf
+STATUS=$(docker inspect --format="{{ .State.Running }}" mupdf 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs mupdf
+elif [ "$STATUS" == "false" ]; then
+  docker start mupdf
+elif [ "$STATUS" == "" ]; then
+  cp $1 /home/anton/.common/mupdf.pdf
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -it \
+    --name mupdf \
+    --entrypoint="mupdf /root/common/mupdf.pdf" \
+    --rm \
+    mupdf
+fi

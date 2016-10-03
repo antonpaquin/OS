@@ -1,7 +1,14 @@
-docker run \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v /home/anton:/root \
-  -e DISPLAY=$DISPLAY \
-  -d \
-  --name atom \
-  atom
+STATUS=$(docker inspect --format="{{ .State.Running }}" atom 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs atom
+elif [ "$STATUS" == "false" ]; then
+  docker start atom
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton:/root \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name atom \
+    atom
+fi

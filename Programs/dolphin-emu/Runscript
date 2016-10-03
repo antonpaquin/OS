@@ -1,7 +1,14 @@
-docker run \
-  -v /home/anton/.common:/root/.common \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e DISPLAY=$DISPLAY \
-  -d \
-  --name dolphin-emu \
-  dolphin-emu
+STATUS=$(docker inspect --format="{{ .State.Running }}" dolphin-emu 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs dolphin-emu
+elif [ "$STATUS" == "false" ]; then
+  docker start dolphin-emu
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name dolphin-emu \
+    dolphin-emu
+fi

@@ -1,7 +1,16 @@
-docker run \
-  -v /home/anton/.common:/root/common \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e DISPLAY=$DISPLAY \
-  -it \
-  --name mpv \
-  mpv
+STATUS=$(docker inspect --format="{{ .State.Running }}" mpv 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs mpv
+elif [ "$STATUS" == "false" ]; then
+  docker start mpv
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --group-add audio \
+    --device /dev/snd \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name mpv \
+    mpv
+fi

@@ -4,12 +4,11 @@ MAINTAINER Anton Paquin <antonpaquin@gmail.com>
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
         python3 \
-        python-pip \
+        python3-pip \
         build-essential \
-        python-dev \
-        python-numpy \
+        python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install numpy
+RUN pip3 install numpy
 
 ENTRYPOINT [ "/bin/bash" ]

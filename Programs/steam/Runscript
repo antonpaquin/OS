@@ -1,14 +1,16 @@
-STATUS=$(docker inspect --format="{{ .State.Running }}" kicad 2> /dev/null)
+STATUS=$(docker inspect --format="{{ .State.Running }}" steam 2> /dev/null)
 if [ "$STATUS" == "true" ]; then
-  docker logs kicad
+  docker logs steam
 elif [ "$STATUS" == "false" ]; then
-  docker start kicad
+  docker start steam
 elif [ "$STATUS" == "" ]; then
   docker run \
     -v /home/anton/.common:/root/common \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY=$DISPLAY \
+    --group-add audio \
+    --device /dev/snd \
     -d \
-    --name kicad \
-    kicad
+    --name steam \
+    steam
 fi

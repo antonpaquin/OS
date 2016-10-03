@@ -1,5 +1,14 @@
-docker run \
-  -v /home/anton/.sysinfo:/root/sysinfo \
-  -d \
-  --name sysextra \
-  sysextra
+STATUS=$(docker inspect --format="{{ .State.Running }}" sysextra 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs sysextra
+elif [ "$STATUS" == "false" ]; then
+  docker start sysextra
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name sysextra \
+    sysextra
+fi

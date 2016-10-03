@@ -1,7 +1,14 @@
-docker run \
-  -v /home/anton/.common:/root/common \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e DISPLAY=$DISPLAY \
-  -d \
-  --name hexchat \
-  hexchat
+STATUS=$(docker inspect --format="{{ .State.Running }}" hexchat 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs hexchat
+elif [ "$STATUS" == "false" ]; then
+  docker start hexchat
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name hexchat \
+    hexchat
+fi

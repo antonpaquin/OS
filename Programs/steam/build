@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /root/OS/Programs/steam/Runscript /usr/dockerscripts/steam &&
+chmod +x /usr/dockerscripts/steam &&
+mkdir -p /usr/dockerfiles/steam &&
+cp /root/OS/Programs/steam/Dockerfile /usr/dockerfiles/steam/Dockerfile &&
+docker build -t steam /usr/dockerfiles/steam

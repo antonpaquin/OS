@@ -1,7 +1,14 @@
-docker run \
-  -v /home/anton/.common:/root/common \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e DISPLAY=$DISPLAY \
-  -d \
-  --name pinta \
-  pinta
+STATUS=$(docker inspect --format="{{ .State.Running }}" pinta 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs pinta
+elif [ "$STATUS" == "false" ]; then
+  docker start pinta
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.common:/root/common \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -d \
+    --name pinta \
+    pinta
+fi

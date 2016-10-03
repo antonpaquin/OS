@@ -1,14 +1,22 @@
-docker run \
-  -v /home/anton/.data/chromium:/data \
-  -v /home/anton/Downloads:/downloads \
-  -v /home/anton/Pictures:/pictures \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v /dev/shm:/dev/shm \
-  -v /var/run:/var/run \
-  --device /dev/dri \
-  --device /dev/snd \
-  -e DISPLAY=$DISPLAY \
-  --group-add audio \
-  -d \
-  --name chromium \
-  chromium
+STATUS=$(docker inspect --format="{{ .State.Running }}" chromium 2> /dev/null)
+if [ "$STATUS" == "true" ]; then
+  docker logs chromium
+elif [ "$STATUS" == "false" ]; then
+  docker start chromium
+elif [ "$STATUS" == "" ]; then
+  docker run \
+    -v /home/anton/.data/chromium:/data \
+    -v /home/anton/Downloads:/downloads \
+    -v /home/anton/Pictures:/pictures \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /dev/shm:/dev/shm \
+    -v /var/run:/var/run \
+    -v /etc/localtime:/etc/localtime:ro \
+    --device /dev/dri \
+    --device /dev/snd \
+    -e DISPLAY=$DISPLAY \
+    --group-add audio \
+    -d \
+    --name chromium \
+    chromium
+fi
